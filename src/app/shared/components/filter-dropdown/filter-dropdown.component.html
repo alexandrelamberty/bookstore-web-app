@@ -1,0 +1,25 @@
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdown_filter"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Select
+  </button>
+  <div id="menu" class="dropdown-menu" aria-labelledby="dropdown_filter">
+    <form class="px-4 py-2">
+      <input
+        type="search"
+        class="form-control"
+        id="search"
+        placeholder="Search"
+        autofocus="autofocus"
+      />
+    </form>
+    <div id="menuItems"></div>
+    <div id="empty" class="dropdown-header">No results found</div>
+  </div>
+</div>

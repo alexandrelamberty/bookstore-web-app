@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <div (click)="selectAuthor(author)" *ngFor="let author of authors">
+    <a class="list-group-item list-group-item-action"
+      >{{ author.id }} <button (click)="deleteAuthor(author)">x</button></a
+    >
+  </div>
+</ul>

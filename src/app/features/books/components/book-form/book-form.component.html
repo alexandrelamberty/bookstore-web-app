@@ -1,0 +1,29 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" formControlName="title" />
+  </div>
+  <div class="mb-3">
+    <label for="author" class="form-label">Author</label>
+    <textarea
+      type="text"
+      class="form-control"
+      formControlName="author"
+    ></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="amazon" class="form-label">Amazon</label>
+    <input type="text" class="form-control" formControlName="amazon" />
+  </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <input type="text" class="form-control" formControlName="category" />
+  </div>
+  <div class="mb-3">
+    <label for="tags" class="form-label">Tags</label>
+    <input type="text" class="form-control" formControlName="tags" />
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">
+    Submit
+  </button>
+</form>
