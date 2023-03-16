@@ -45,18 +45,17 @@ export class LoginFormComponent implements OnInit {
     const user = this.loginForm.value;
     this.authService.login(user).subscribe({
       next: (res: AuthResult) => {
+        console.log('Login::Result');
+        // FIXME: move to service
         localStorage.setItem('token', res.result.token);
         localStorage.setItem('userId', res.result.user.id.toString());
         localStorage.setItem('userRole', res.result.user.roles);
-
-        this.authService.emit();
       },
       error: (err) => {
-        //TODO : Gestion de l'erreur email unique
+        console.log(err);
       },
       complete: () => {
-        //Redirection vers accueil
-        // this._router.navigateByUrl('/');
+        console.log('Login::Complete');
         this.loginForm.reset();
         this.router.navigate(['/']);
       },

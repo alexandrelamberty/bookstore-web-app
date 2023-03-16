@@ -5,7 +5,9 @@ import { environment } from '../../../../environments/environment';
 import { User } from '../../users/model/user.model';
 import { AuthResult } from '../models/auth-result';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
   //
   private _isConnected$: BehaviorSubject<boolean> = new BehaviorSubject(
@@ -37,6 +39,7 @@ export class AuthService {
           console.log('AuthResult: ', auth);
           this.authenticatedUser = auth.result.user;
           this.$authenticatedUser.next(this.authenticatedUser);
+          this._isConnected$.next(true);
         })
       );
   }
@@ -48,11 +51,14 @@ export class AuthService {
         tap((auth: AuthResult) => {
           console.log('AuthResult: ', auth);
           this.authenticatedUser = auth.result.user;
+          this.$authenticatedUser.next(this.authenticatedUser);
+          this._isConnected$.next(true);
         })
       );
   }
 
   public logout(): void {
+    console.log('logout');
     this._isConnected$.next(false);
   }
 

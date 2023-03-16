@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.isConnected$.subscribe((connectionState: boolean) => {
-      console.log('ETAT CONNECTION : ', connectionState);
+      console.log('isConnected : ', connectionState);
       this.isConnected = connectionState;
       this.user = this.authService.authenticatedUser;
     });
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
     //   this.isConnected = isAuthenticated;
     // });
     this.authService.$authenticatedUser.subscribe((authenticatedUser) => {
-      console.log('NavBarComponent ', authenticatedUser);
+      console.log('user', authenticatedUser);
       this.user = authenticatedUser;
     });
   }

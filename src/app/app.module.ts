@@ -31,7 +31,7 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     BooksModule,
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [AuthGuard],
   declarations: [
     AppComponent,
     LayoutComponent,
