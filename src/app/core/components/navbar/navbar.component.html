@@ -57,6 +57,15 @@
             >Genres</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/orders"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Orders</a
+          >
+        </li>
       </ul>
 
       <div class="d-flex flex-column flex-md-row flex-lg-row">
@@ -98,7 +107,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ user?.username }}
+                {{ user?.email }}
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li>

@@ -30,13 +30,26 @@ export class AuthService {
   }
 
   public register(user: any): Observable<AuthResult> {
-    return this.http.post<AuthResult>(environment.apiURL + 'auth/login', user);
-    // FIXME: tap into result
+    return this.http
+      .post<AuthResult>(environment.apiURL + 'auth/login', user)
+      .pipe(
+        tap((auth: AuthResult) => {
+          console.log('AuthResult: ', auth);
+          this.authenticatedUser = auth.result.user;
+          this.$authenticatedUser.next(this.authenticatedUser);
+        })
+      );
   }
 
   public login(user: any): Observable<AuthResult> {
-    return this.http.post<AuthResult>(environment.apiURL + 'auth/login', user);
-    // FIXME: tap into result
+    return this.http
+      .post<AuthResult>(environment.apiURL + 'auth/login', user)
+      .pipe(
+        tap((auth: AuthResult) => {
+          console.log('AuthResult: ', auth);
+          this.authenticatedUser = auth.result.user;
+        })
+      );
   }
 
   public logout(): void {

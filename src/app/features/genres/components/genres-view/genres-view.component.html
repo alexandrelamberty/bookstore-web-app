@@ -1,0 +1,12 @@
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col" *ngFor="let genre of genres" (click)="selectGenre(genre)">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ genre.name }}</h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+</div>

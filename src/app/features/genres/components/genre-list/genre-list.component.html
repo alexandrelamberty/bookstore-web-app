@@ -1,0 +1,7 @@
+<ul class="list-group">
+  <div (click)="selectGenre(genre)" *ngFor="let genre of genres">
+    <a class="list-group-item list-group-item-action"
+      >{{ genre.name }} <button (click)="deleteGenre(genre)">x</button></a
+    >
+  </div>
+</ul>

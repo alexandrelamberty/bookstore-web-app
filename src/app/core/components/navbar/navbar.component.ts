@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
     this.authService.isConnected$.subscribe((connectionState: boolean) => {
       console.log('ETAT CONNECTION : ', connectionState);
       this.isConnected = connectionState;
+      this.user = this.authService.authenticatedUser;
     });
 
     //
@@ -26,10 +27,10 @@ export class NavbarComponent implements OnInit {
     //   console.log('NavBarComponent ', isAuthenticated);
     //   this.isConnected = isAuthenticated;
     // });
-    // this.authService.$authenticatedUser.subscribe((authenticatedUser) => {
-    //   console.log('NavBarComponent ', authenticatedUser);
-    //   this.user = authenticatedUser;
-    // });
+    this.authService.$authenticatedUser.subscribe((authenticatedUser) => {
+      console.log('NavBarComponent ', authenticatedUser);
+      this.user = authenticatedUser;
+    });
   }
 
   logout(): void {
