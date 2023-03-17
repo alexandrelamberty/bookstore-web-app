@@ -9,13 +9,13 @@ import { GenresResponse } from '../../models/genre-responses.model';
   styleUrls: ['./genres-view.component.css'],
 })
 export class GenresViewComponent {
-  @Output() selectGenreEvent: EventEmitter<{ title: string }>;
+  @Output() selectGenreEvent: EventEmitter<{ genreId: string }>;
 
   genres: Genre[] = [];
 
   constructor(private service: GenresService) {
     console.log('GenreListComponent');
-    this.selectGenreEvent = new EventEmitter<{ title: string }>();
+    this.selectGenreEvent = new EventEmitter<{ genreId: string }>();
   }
 
   ngOnInit(): void {
@@ -30,6 +30,6 @@ export class GenresViewComponent {
   selectGenre(genre: Genre) {
     console.log('GenresViewComponent::selectGenre', genre);
     // Emit data to the parent
-    this.selectGenreEvent.emit({ title: genre.name });
+    this.selectGenreEvent.emit({ genreId: genre.id });
   }
 }

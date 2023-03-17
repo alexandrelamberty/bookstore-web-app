@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Publisher } from '../../models/publisher.model';
 
 @Component({
   selector: 'app-publisher-details',
@@ -7,10 +8,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 })
 export class PublisherDetailsComponent implements OnInit {
   // Receive from parent [selectedPublisherTitle]="parentData"
-  @Input() publisher: any = 'sdfsdf';
-
-  // test
-  test: string = 'hello';
+  @Input() publisher: Publisher | undefined = undefined;
 
   ngOnInit() {
     console.log(PublisherDetailsComponent.name, 'OnInit');

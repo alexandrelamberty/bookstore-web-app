@@ -9,6 +9,7 @@ import { GenreListComponent } from './components/genre-list/genre-list.component
 import { GenresViewComponent } from './components/genres-view/genres-view.component';
 import { GenresComponent } from './pages/genres/genres.component';
 import { GenresService } from './services/genres.service';
+import { GenresDetailsComponent } from './pages/genres-details/genres-details.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { GenresService } from './services/genres.service';
   exports: [GenresComponent],
   declarations: [
     GenresComponent,
+    GenresDetailsComponent,
     GenreFormComponent,
     GenreListComponent,
     GenreDetailsComponent,

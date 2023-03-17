@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-publishers',
@@ -6,26 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./publishers.component.css'],
 })
 export class PublishersComponent {
-  // Property passed to publisher-details
-  selectedPublisher: any = '';
+  constructor(private router: Router) {}
 
-  favPublishers = [
-    { title: 'Principles' },
-    { title: 'The Story of Success' },
-    { title: 'Extreme Economies' },
-  ];
-
-  onPublisherAdded(eventData: { title: string }) {
-    console.log(eventData);
-    this.favPublishers = this.favPublishers.concat({
-      title: eventData.title,
-    });
-  }
-
-  onSelectedItem(eventData: { title: string }) {
-    console.log('Event', eventData);
-    // Update the property we want to use in publisher-details
-    // change page and pass id
-    this.selectedPublisher = eventData;
+  onSelectedItem(event: { publisherId: string }) {
+    console.log('Event', event);
+    this.router.navigate(['publishers', event.publisherId]);
   }
 }

@@ -23,7 +23,7 @@ export class PublishersService {
     );
   }
 
-  getById(id: number): Observable<PublisherResponse> {
+  getById(id: string): Observable<PublisherResponse> {
     return this._httpClient.get<PublisherResponse>(
       environment.apiURL + this.endpoint + id
     );

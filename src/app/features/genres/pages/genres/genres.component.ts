@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-genres',
@@ -6,26 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./genres.component.css'],
 })
 export class GenresComponent {
-  // Property passed to genre-details
-  selectedGenre: any = '';
+  constructor(private router: Router) {}
 
-  favGenres = [
-    { title: 'Principles' },
-    { title: 'The Story of Success' },
-    { title: 'Extreme Economies' },
-  ];
-
-  onGenreAdded(eventData: { title: string }) {
-    console.log(eventData);
-    this.favGenres = this.favGenres.concat({
-      title: eventData.title,
-    });
-  }
-
-  onSelectedItem(eventData: { title: string }) {
-    console.log('Event', eventData);
-    // Update the property we want to use in genre-details
-    // change page and pass id
-    this.selectedGenre = eventData;
+  onSelectedItem(event: { genreId: string }) {
+    console.log('Event', event);
+    this.router.navigate(['genres', event.genreId]);
   }
 }

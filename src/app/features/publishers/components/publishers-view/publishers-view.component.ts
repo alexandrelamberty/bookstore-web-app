@@ -9,13 +9,13 @@ import { PublishersResponse } from '../../models/publisher-responses.model';
   styleUrls: ['./publishers-view.component.css'],
 })
 export class PublishersViewComponent {
-  @Output() selectPublisherEvent: EventEmitter<{ title: string }>;
+  @Output() selectPublisherEvent: EventEmitter<{ publisherId: string }>;
 
   publishers: Publisher[] = [];
 
   constructor(private service: PublishersService) {
     console.log('PublisherListComponent');
-    this.selectPublisherEvent = new EventEmitter<{ title: string }>();
+    this.selectPublisherEvent = new EventEmitter<{ publisherId: string }>();
   }
 
   ngOnInit(): void {
@@ -29,7 +29,6 @@ export class PublishersViewComponent {
 
   selectPublisher(publisher: Publisher) {
     console.log('PublishersViewComponent::selectPublisher', publisher);
-    // Emit data to the parent
-    this.selectPublisherEvent.emit({ title: publisher.name });
+    this.selectPublisherEvent.emit({ publisherId: publisher.id });
   }
 }

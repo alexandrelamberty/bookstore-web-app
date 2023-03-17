@@ -20,7 +20,7 @@ export class GenresService {
     );
   }
 
-  getById(id: number): Observable<GenreResponse> {
+  getById(id: string): Observable<GenreResponse> {
     return this._httpClient.get<GenreResponse>(
       environment.apiURL + this.endpoint + id
     );

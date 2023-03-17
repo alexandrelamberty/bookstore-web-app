@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Publisher } from '../../models/publisher.model';
+import { CreatePublisherDTO } from '../../dtos/create-publisher.dto';
 
 @Component({
   selector: 'app-publisher-form',
@@ -40,7 +41,7 @@ export class PublisherFormComponent implements OnInit {
     this.submitted = true;
     if (this.publisherForm.invalid) return;
 
-    const publisher: Publisher = {
+    const publisher: CreatePublisherDTO = {
       name: this.publisherForm.value.name,
     };
 

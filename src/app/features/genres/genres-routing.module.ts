@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GenresComponent } from './pages/genres/genres.component';
+import { GenresDetailsComponent } from './pages/genres-details/genres-details.component';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: GenresComponent,
+    component: GenresDetailsComponent,
   },
 ];
 

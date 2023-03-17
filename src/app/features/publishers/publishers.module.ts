@@ -9,6 +9,7 @@ import { PublisherListComponent } from './components/publisher-list/publisher-li
 import { PublishersViewComponent } from './components/publishers-view/publishers-view.component';
 import { PublishersComponent } from './pages/publishers/publishers.component';
 import { PublishersService } from './services/publishers.service';
+import { PublishersDetailsComponent } from './pages/publishers-details/publishers-details.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { PublishersService } from './services/publishers.service';
   exports: [PublishersComponent],
   declarations: [
     PublishersComponent,
+    PublishersDetailsComponent,
     PublisherFormComponent,
     PublisherListComponent,
     PublisherDetailsComponent,
