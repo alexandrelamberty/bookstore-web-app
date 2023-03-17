@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChildOutputComponent } from './child-output.component';
+import { BooksEditComponent } from './books-edit.component';
 
-describe('ChildOutputComponent', () => {
-  let component: ChildOutputComponent;
-  let fixture: ComponentFixture<ChildOutputComponent>;
+describe('BooksEditComponent', () => {
+  let component: BooksEditComponent;
+  let fixture: ComponentFixture<BooksEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChildOutputComponent ]
+      declarations: [ BooksEditComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ChildOutputComponent);
+    fixture = TestBed.createComponent(BooksEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

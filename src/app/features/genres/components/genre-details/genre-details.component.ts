@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Genre } from '../../models/genre.model';
 
 @Component({
   selector: 'app-genre-details',
@@ -7,10 +8,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 })
 export class GenreDetailsComponent implements OnInit {
   // Receive from parent [selectedGenreTitle]="parentData"
-  @Input() genre: any = 'sdfsdf';
-
-  // test
-  test: string = 'hello';
+  @Input() genre: Genre | undefined = undefined;
 
   ngOnInit() {
     console.log(GenreDetailsComponent.name, 'OnInit');

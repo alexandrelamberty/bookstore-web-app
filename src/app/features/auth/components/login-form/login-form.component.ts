@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
         // FIXME: move to service
         localStorage.setItem('token', res.result.token);
         localStorage.setItem('userId', res.result.user.id.toString());
-        localStorage.setItem('userRole', res.result.user.roles);
+        localStorage.setItem('userRole', res.result.user.role);
       },
       error: (err) => {
         console.log(err);

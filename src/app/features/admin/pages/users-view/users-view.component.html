@@ -1,0 +1,6 @@
+<p>Users</p>
+<app-table
+  *ngIf="users"
+  [columns]="['firstName', 'lastName', 'role']"
+  [data]="users"
+></app-table>

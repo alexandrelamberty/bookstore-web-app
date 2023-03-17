@@ -1,2 +1,15 @@
 <p>Publisher Details Component</p>
-<p>{{ publisher?.name }}</p>
+<div *ngIf="publisher">
+  <dl>
+    <dt>Name</dt>
+    <dd>{{ publisher.name }}</dd>
+    <dt>Books</dt>
+    <dd>
+      <ul *ngIf="publisher?.books">
+        <li *ngFor="let book of publisher.books">
+          {{ book.title }}
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</div>

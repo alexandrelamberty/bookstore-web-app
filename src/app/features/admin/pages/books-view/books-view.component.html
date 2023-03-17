@@ -1,0 +1,6 @@
+<p>Books</p>
+<app-table
+  *ngIf="books"
+  [columns]="['title', 'description', 'genre[name]', 'publisher.name']"
+  [data]="books"
+></app-table>

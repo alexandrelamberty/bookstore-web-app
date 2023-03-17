@@ -1,2 +1,15 @@
-<p>Genre Details Component</p>
-<p>{{ genre.name }}</p>
+<p>Genre Details</p>
+<div *ngIf="genre">
+  <dl>
+    <dt>Name</dt>
+    <dd>{{ genre.name }}</dd>
+    <dt>Books</dt>
+    <dd>
+      <ul *ngIf="genre.books">
+        <li *ngFor="let book of genre.books">
+          {{ book.title }}
+        </li>
+      </ul>
+    </dd>
+  </dl>
+</div>

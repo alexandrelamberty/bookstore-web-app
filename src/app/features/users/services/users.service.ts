@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
-import { User } from '../model/user.model';
-import { BOOKS } from './users';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
-import { CreateUserDTO } from '../dtos/create-user.dto';
 import { UpdateUserDTO } from '../dtos/update-user.dto';
+import { UserResponse, UsersResponse } from '../model/user-responses.model';
 
 @Injectable({
   providedIn: 'root',
@@ -15,14 +13,14 @@ export class UsersService {
 
   constructor(private _httpClient: HttpClient) {}
 
-  getAll(): Observable<GenreResultArray> {
-    return this._httpClient.get<GenreResultArray>(
+  getAll(): Observable<UsersResponse> {
+    return this._httpClient.get<UsersResponse>(
       environment.apiURL + this.endpoint
     );
   }
 
-  getById(id: number): Observable<GenreResult> {
-    return this._httpClient.get<GenreResult>(
+  getById(id: number): Observable<UserResponse> {
+    return this._httpClient.get<UserResponse>(
       environment.apiURL + this.endpoint + id
     );
   }

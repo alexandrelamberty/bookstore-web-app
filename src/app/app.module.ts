@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +17,7 @@ import { HomeComponent } from './core/pages/home/home.component';
 import { NotFoundComponent } from './core/pages/not-found/not-found.component';
 import { SettingsComponent } from './core/pages/settings/settings.component';
 import { AuthModule } from './features/auth/auth.module';
-import { AuthService } from './features/auth/services/auth.service';
+import { AuthInterceptor } from './features/auth/interceptors/auth.interceptor';
 import { BooksModule } from './features/books/books.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -31,7 +31,14 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     BooksModule,
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   declarations: [
     AppComponent,
     LayoutComponent,

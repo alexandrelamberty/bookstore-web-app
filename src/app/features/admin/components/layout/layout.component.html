@@ -1,0 +1,44 @@
+<div class="container">
+  <h3>Admin</h3>
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="list-group">
+        <a
+          [routerLink]="['./']"
+          class="list-group-item list-group-item-action active"
+          aria-current="true"
+        >
+          Dashboard
+        </a>
+        <a
+          [routerLink]="['books']"
+          class="list-group-item list-group-item-action"
+          >Books</a
+        >
+        <a
+          [routerLink]="['authors']"
+          class="list-group-item list-group-item-action"
+          >Authors</a
+        >
+        <a
+          [routerLink]="['publishers']"
+          class="list-group-item list-group-item-action"
+          >Publishers</a
+        >
+        <a
+          [routerLink]="['genres']"
+          class="list-group-item list-group-item-action"
+          >Genres</a
+        >
+        <a
+          [routerLink]="['users']"
+          class="list-group-item list-group-item-action"
+          >Users</a
+        >
+      </div>
+    </div>
+    <div class="col-sm-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

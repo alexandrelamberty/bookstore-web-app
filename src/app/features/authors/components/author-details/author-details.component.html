@@ -1,18 +1,14 @@
-<h3>Author details</h3>
-<p>More details about your favorites authors.</p>
-<div *ngIf="author != null">
-  <dl>
-    <dt>Title</dt>
-    <dd>{{ author?.firstName }}</dd>
-    <dt>Description</dt>
-    <dd>{{ author?.lastName }}</dd>
-    <dt>Books</dt>
-    <dd>
-      <ul>
-        <li *ngFor="let book of author.books">
-          {{ book.title }}
-        </li>
-      </ul>
-    </dd>
-  </dl>
-</div>
+<dl *ngIf="author">
+  <dt>Title</dt>
+  <dd>{{ author.firstName }}</dd>
+  <dt>Description</dt>
+  <dd>{{ author.lastName }}</dd>
+  <dt>Books</dt>
+  <dd>
+    <ul>
+      <li *ngFor="let book of author.books">
+        {{ book.title }}
+      </li>
+    </ul>
+  </dd>
+</dl>

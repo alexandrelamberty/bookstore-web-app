@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable()
-export class LoginInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
 
   intercept(
@@ -27,6 +27,7 @@ export class LoginInterceptor implements HttpInterceptor {
     }
     return next.handle(req);
     */
+    console.log('-------------- INTERCEPTORS ---------------');
     let token: string | null = localStorage.getItem('token');
     if (token && token != '') {
       let requestClone = req.clone({

@@ -67,32 +67,46 @@ const routes: Routes = [
       import('./features/orders/orders.module').then((m) => m.OrdersModule),
   },
   {
+    path: 'admin',
+    title: 'Admin',
+    component: LayoutComponent,
+    loadChildren: () =>
+      import('./features/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'profile', component: SettingsComponent }],
   },
   {
     path: '',
     canActivate: [AuthGuard],
+    component: LayoutComponent,
     children: [{ path: 'settings', component: SettingsComponent }],
   },
   {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'features', component: FeaturesComponent }],
   },
   {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'faqs', component: FaqsComponent }],
   },
   {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'help', component: HelpComponent }],
   },
   {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'contact', component: ContactComponent }],
   },
   {
     path: '',
+    component: LayoutComponent,
     children: [{ path: 'about-us', component: AboutUsComponent }],
   },
   {

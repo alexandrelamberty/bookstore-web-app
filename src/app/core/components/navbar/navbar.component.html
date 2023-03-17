@@ -65,7 +65,16 @@
             routerLink="/orders"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
-            >Orders</a
+            >My Orders</a
+          >
+        </li>
+        <li *ngIf="user?.role === 'Admin'" class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/admin"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Admin</a
           >
         </li>
       </ul>
