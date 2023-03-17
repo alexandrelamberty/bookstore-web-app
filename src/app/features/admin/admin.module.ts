@@ -14,9 +14,14 @@ import { PublishersViewComponent } from './pages/publishers-view/publishers-view
 import { UsersViewComponent } from './pages/users-view/users-view.component';
 import { UsersEditComponent } from './pages/users-edit/users-edit.component';
 import { SharedModule } from '../../shared/shared.module';
+import { BooksAddComponent } from './pages/books-add/books-add.component';
+import { AuthorsAddComponent } from './pages/authors-add/authors-add.component';
+import { PublishersAddComponent } from './pages/publishers-add/publishers-add.component';
+import { GenresAddComponent } from './pages/genres-add/genres-add.component';
+import { BooksModule } from '../books/books.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, AdminRoutingModule],
+  imports: [CommonModule, SharedModule, BooksModule, AdminRoutingModule],
   declarations: [
     DashboardComponent,
     LayoutComponent,
@@ -30,6 +35,10 @@ import { SharedModule } from '../../shared/shared.module';
     PublishersViewComponent,
     UsersViewComponent,
     UsersEditComponent,
+    BooksAddComponent,
+    AuthorsAddComponent,
+    PublishersAddComponent,
+    GenresAddComponent,
   ],
 })
 export class AdminModule {}
