@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-authors',
@@ -9,23 +10,10 @@ export class AuthorsComponent {
   // Property passed to author-details
   selectedAuthor: any = '';
 
-  favAuthors = [
-    { title: 'Principles' },
-    { title: 'The Story of Success' },
-    { title: 'Extreme Economies' },
-  ];
+  constructor(private router: Router) {}
 
-  onAuthorAdded(eventData: { title: string }) {
-    console.log(eventData);
-    this.favAuthors = this.favAuthors.concat({
-      title: eventData.title,
-    });
-  }
-
-  onSelectedItem(eventData: { title: string }) {
-    console.log('Event', eventData);
-    // Update the property we want to use in author-details
-    // change page and pass id
-    this.selectedAuthor = eventData;
+  onSelectedItem(event: { authorId: string }) {
+    console.log('Event', event);
+    this.router.navigate(['authors', event.authorId]);
   }
 }

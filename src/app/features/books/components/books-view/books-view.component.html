@@ -3,10 +3,19 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{ book.title }}</h5>
-        <p class="card-text">{{ book.author }}</p>
-        <a href="{{ book.amazonUrl }}" target="_blank" class="card-link"
-          >Amazon Link</a
-        >
+        <h5 class="card-title">{{ book.description }}</h5>
+        <h5 class="card-title">{{ book.genre.name }}</h5>
+        <h5 class="card-title">{{ book.publisher.name }}</h5>
+        <ul>
+          <li *ngFor="let author of book.authors">
+            <a
+              href="{{ author.firstName }}"
+              target="_blank"
+              class="card-link"
+              >{{ author.firstName }}</a
+            >
+          </li>
+        </ul>
       </div>
       <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>

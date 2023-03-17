@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -6,26 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent {
-  // Property passed to book-details
-  selectedBook: any = '';
-
-  favBooks = [
-    { title: 'Principles' },
-    { title: 'The Story of Success' },
-    { title: 'Extreme Economies' },
-  ];
-
-  onBookAdded(eventData: { title: string }) {
-    console.log(eventData);
-    this.favBooks = this.favBooks.concat({
-      title: eventData.title,
-    });
+  constructor(private router: Router) {
+    //
   }
 
-  onSelectedItem(eventData: { title: string }) {
-    console.log('Event', eventData);
-    // Update the property we want to use in book-details
-    // change page and pass id
-    this.selectedBook = eventData;
+  onBookAdded(event: { title: string }) {
+    console.log(event);
+  }
+
+  onSelectedItem(event: { bookId: string }) {
+    console.log('Event', event);
+    this.router.navigate(['books', event.bookId]);
   }
 }

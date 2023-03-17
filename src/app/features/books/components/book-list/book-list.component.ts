@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BooksService } from '../../services/books.service';
-import { Book } from '../../model/book.model';
+import { Book } from '../../models/book.model';
+import { BooksResponse } from '../../models/book-responses.model';
 
 @Component({
   selector: 'app-book-list',
@@ -10,19 +11,23 @@ import { Book } from '../../model/book.model';
 })
 export class BookListComponent implements OnInit {
   // Event to be emited to the parent
-  @Output() selectBookEvent: EventEmitter<{title:string}>;
+  @Output() selectBookEvent: EventEmitter<{ title: string }>;
 
   // Books to show in the list
   books: Book[] = [];
 
   constructor(private booksService: BooksService) {
     console.log('BookListComponent');
-    this.selectBookEvent = new EventEmitter<{title:string}>();
+    this.selectBookEvent = new EventEmitter<{ title: string }>();
   }
 
   ngOnInit(): void {
     console.log(BookListComponent.name);
-    this.books = this.booksService.getBooks();
+    this.booksService.getAll().subscribe({
+      next: (res: BooksResponse) => {
+        this.books = res.results;
+      },
+    });
   }
 
   deleteBook(book: Book) {
@@ -37,6 +42,6 @@ export class BookListComponent implements OnInit {
   selectBook(book: Book) {
     console.log('BookListComponent::selectBook', book);
     // Emit data to the parent
-    this.selectBookEvent.emit({title: book.title});
+    this.selectBookEvent.emit({ title: book.title });
   }
 }

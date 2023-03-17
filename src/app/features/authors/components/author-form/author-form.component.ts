@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorsService } from '../../services/authors.service';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Author } from '../../model/author.model';
-import { AuthorDTO } from '../../dto/author.dto';
+import { CreateAuthorDTO } from '../../dtos/create-author.dto';
+import { AuthorsService } from '../../services/authors.service';
 
 @Component({
   selector: 'app-author-form',
@@ -47,12 +46,16 @@ export class AuthorFormComponent implements OnInit {
     this.submitted = true;
     if (this.authorForm.invalid) return;
 
-    const author: AuthorDTO = {
+    const author: CreateAuthorDTO = {
       firstName: this.authorForm.value.firsName,
       lastName: this.authorForm.value.lastName,
     };
 
-    this.service.addAuthor(author);
+    this.service.create(author).subscribe({
+      next: () => {
+        //
+      },
+    });
     this.authorForm.reset();
   }
 

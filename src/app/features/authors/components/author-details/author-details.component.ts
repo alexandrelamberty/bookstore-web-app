@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Author } from '../../models/author.model';
 
 @Component({
   selector: 'app-author-details',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 })
 export class AuthorDetailsComponent implements OnInit {
   // Receive from parent [selectedAuthorTitle]="parentData"
-  @Input() author: any = 'sdfsdf';
+  @Input() author: Author | undefined = undefined;
 
   ngOnInit() {
     console.log(AuthorDetailsComponent.name, 'OnInit');

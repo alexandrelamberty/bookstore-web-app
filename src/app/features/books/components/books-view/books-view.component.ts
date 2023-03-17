@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Book } from '../../model/book.model';
+import { Book } from '../../models/book.model';
 import { BooksService } from '../../services/books.service';
+import { BooksResponse } from '../../models/book-responses.model';
 
 @Component({
   selector: 'app-books-view',
@@ -8,23 +9,27 @@ import { BooksService } from '../../services/books.service';
   styleUrls: ['./books-view.component.css'],
 })
 export class BooksViewComponent {
-  @Output() selectBookEvent: EventEmitter<{ title: string }>;
+  @Output() selectBookEvent: EventEmitter<{ bookId: string }>;
 
   books: Book[] = [];
 
-  constructor(private service: BooksService) {
+  constructor(private booksService: BooksService) {
     console.log('BookListComponent');
-    this.selectBookEvent = new EventEmitter<{ title: string }>();
+    this.selectBookEvent = new EventEmitter<{ bookId: string }>();
   }
 
   ngOnInit(): void {
     console.log(BooksViewComponent.name);
-    this.books = this.service.getBooks();
+    this.booksService.getAll().subscribe({
+      next: (response: BooksResponse) => {
+        this.books = response.results;
+      },
+    });
   }
 
   selectBook(book: Book) {
     console.log('BooksViewComponent::selectBook', book);
     // Emit data to the parent
-    this.selectBookEvent.emit({ title: book.title });
+    this.selectBookEvent.emit({ bookId: book.id });
   }
 }

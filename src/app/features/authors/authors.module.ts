@@ -9,6 +9,7 @@ import { AuthorListComponent } from './components/author-list/author-list.compon
 import { AuthorsViewComponent } from './components/authors-view/authors-view.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { AuthorsService } from './services/authors.service';
+import { AuthorsDetailsComponent } from './pages/authors-details/authors-details.component';
 
 @NgModule({
   imports: [
@@ -22,10 +23,11 @@ import { AuthorsService } from './services/authors.service';
   exports: [AuthorsComponent],
   declarations: [
     AuthorsComponent,
+    AuthorsViewComponent,
+    AuthorsDetailsComponent,
     AuthorFormComponent,
     AuthorListComponent,
     AuthorDetailsComponent,
-    AuthorsViewComponent,
   ],
 })
 export class AuthorsModule {}

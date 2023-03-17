@@ -6,8 +6,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Genre } from '../../model/genre.model';
-import { CreateGenreDTO } from '../../dto/create-genre.dto';
+import { Genre } from '../../models/genre.model';
+import { CreateGenreDTO } from '../../dtos/create-genre.dto';
 
 @Component({
   selector: 'app-genre-form',
@@ -45,7 +45,7 @@ export class GenreFormComponent implements OnInit {
       name: this.genreForm.value.name,
     };
 
-    this.service.addGenre(genre);
+    this.service.create(genre);
     this.genreForm.reset();
   }
 

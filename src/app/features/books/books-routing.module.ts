@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BooksComponent } from './pages/books/books.component';
-import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { BooksDetailsComponent } from './pages/books-details/books-details.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: BookDetailsComponent,
+    component: BooksDetailsComponent,
   },
 ];
 

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GenresService } from '../../services/genres.service';
-import { Genre } from '../../model/genre.model';
+import { Genre } from '../../models/genre.model';
+import { GenresResponse } from '../../models/genre-responses.model';
 
 @Component({
   selector: 'app-genre-list',
@@ -22,7 +23,11 @@ export class GenreListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(GenreListComponent.name);
-    this.genres = this.genresService.getGenres();
+    this.genresService.getAll().subscribe({
+      next: (res: GenresResponse) => {
+        this.genres = res.results;
+      },
+    });
   }
 
   deleteGenre(genre: Genre) {

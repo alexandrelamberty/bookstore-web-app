@@ -1,4 +1,4 @@
-import { Book } from '../../books/model/book.model';
+import { Book } from '../../books/models/book.model';
 
 export interface Author {
   id: string;

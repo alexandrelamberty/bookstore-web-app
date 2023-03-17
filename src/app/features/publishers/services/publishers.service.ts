@@ -1,22 +1,49 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Publisher } from '../model/publisher.model';
-import { BOOKS } from './publishers';
+import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
+import { CreatePublisherDTO } from '../dtos/create-publisher.dto';
+import { UpdatePublisherDTO } from '../dtos/update-publisher.dto';
+import {
+  PublisherResponse,
+  PublishersResponse,
+} from '../models/publisher-responses.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PublishersService {
-  publishers: Publisher[] = [];
+  private endpoint = 'publishers/';
 
-  addPublisher(publisher: Publisher) {
-    this.publishers.push(publisher);
+  constructor(private _httpClient: HttpClient) {}
+
+  getAll(): Observable<PublishersResponse> {
+    return this._httpClient.get<PublishersResponse>(
+      environment.apiURL + this.endpoint
+    );
   }
 
-  getPublishers(): Publisher[] {
-    return this.publishers;
+  getById(id: number): Observable<PublisherResponse> {
+    return this._httpClient.get<PublisherResponse>(
+      environment.apiURL + this.endpoint + id
+    );
   }
 
-  removePublisher(publisher: Publisher) {
-    //
+  create(publisher: CreatePublisherDTO): Observable<PublisherResponse> {
+    return this._httpClient.post<PublisherResponse>(
+      environment.apiURL + this.endpoint,
+      publisher
+    );
+  }
+
+  update(id: number, publisher: UpdatePublisherDTO): Observable<any> {
+    return this._httpClient.put(
+      environment.apiURL + this.endpoint + id,
+      publisher
+    );
+  }
+
+  delete(id: number): Observable<any> {
+    return this._httpClient.delete(environment.apiURL + this.endpoint + id);
   }
 }

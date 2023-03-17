@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Genre } from '../../model/genre.model';
+import { Genre } from '../../models/genre.model';
 import { GenresService } from '../../services/genres.service';
+import { GenresResponse } from '../../models/genre-responses.model';
 
 @Component({
   selector: 'app-genres-view',
@@ -19,7 +20,11 @@ export class GenresViewComponent {
 
   ngOnInit(): void {
     console.log(GenresViewComponent.name);
-    this.genres = this.service.getGenres();
+    this.service.getAll().subscribe({
+      next: (res: GenresResponse) => {
+        this.genres = res.results;
+      },
+    });
   }
 
   selectGenre(genre: Genre) {

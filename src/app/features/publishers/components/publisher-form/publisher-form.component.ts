@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Publisher } from '../../model/publisher.model';
+import { Publisher } from '../../models/publisher.model';
 
 @Component({
   selector: 'app-publisher-form',
@@ -39,10 +39,12 @@ export class PublisherFormComponent implements OnInit {
     console.log('PublisherFormComponent::onSubmit');
     this.submitted = true;
     if (this.publisherForm.invalid) return;
+
     const publisher: Publisher = {
       name: this.publisherForm.value.name,
     };
-    this.service.addPublisher(publisher);
+
+    this.service.create(publisher);
     this.publisherForm.reset();
   }
 

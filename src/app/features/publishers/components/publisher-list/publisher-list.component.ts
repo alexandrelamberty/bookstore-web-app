@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PublishersService } from '../../services/publishers.service';
-import { Publisher } from '../../model/publisher.model';
+import { Publisher } from '../../models/publisher.model';
+import { PublishersResponse } from '../../models/publisher-responses.model';
 
 @Component({
   selector: 'app-publisher-list',
@@ -22,7 +23,11 @@ export class PublisherListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(PublisherListComponent.name);
-    this.publishers = this.publishersService.getPublishers();
+    this.publishersService.getAll().subscribe({
+      next: (res: PublishersResponse) => {
+        this.publishers = res.results;
+      },
+    });
   }
 
   deletePublisher(publisher: Publisher) {

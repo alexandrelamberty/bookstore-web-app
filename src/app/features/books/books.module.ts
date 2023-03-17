@@ -9,6 +9,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { BooksViewComponent } from './components/books-view/books-view.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BooksService } from './services/books.service';
+import { BooksDetailsComponent } from './pages/books-details/books-details.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { BooksService } from './services/books.service';
     BookListComponent,
     BookDetailsComponent,
     BooksViewComponent,
+    BooksDetailsComponent,
   ],
 })
 export class BooksModule {}

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Publisher } from '../../model/publisher.model';
+import { Publisher } from '../../models/publisher.model';
 import { PublishersService } from '../../services/publishers.service';
+import { PublishersResponse } from '../../models/publisher-responses.model';
 
 @Component({
   selector: 'app-publishers-view',
@@ -19,7 +20,11 @@ export class PublishersViewComponent {
 
   ngOnInit(): void {
     console.log(PublishersViewComponent.name);
-    this.publishers = this.service.getPublishers();
+    this.service.getAll().subscribe({
+      next: (res: PublishersResponse) => {
+        this.publishers = res.results;
+      },
+    });
   }
 
   selectPublisher(publisher: Publisher) {

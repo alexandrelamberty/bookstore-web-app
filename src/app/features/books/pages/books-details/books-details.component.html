@@ -1,0 +1,24 @@
+<h3>Book details</h3>
+<p>A collection of recommanded books.</p>
+<div *ngIf="book != null">
+  <dl>
+    <dt>Title</dt>
+    <dd>{{ book.title }}</dd>
+    <dt>Description</dt>
+    <dd>{{ book.description }}</dd>
+    <dt>Cover</dt>
+    <dd>{{ book.cover }}</dd>
+    <dt>Authors</dt>
+    <dd>
+      <ul>
+        <li *ngFor="let author of book.authors">
+          {{ author.firstName }}
+        </li>
+      </ul>
+    </dd>
+    <dt>Genre</dt>
+    <dd>{{ book.genre.name }}</dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher.name }}</dd>
+  </dl>
+</div>

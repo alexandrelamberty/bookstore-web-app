@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthorsService } from '../../services/authors.service';
-import { Author } from '../../model/author.model';
+import { Author } from '../../models/author.model';
 
 @Component({
   selector: 'app-author-list',
@@ -22,7 +22,9 @@ export class AuthorListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(AuthorListComponent.name);
-    this.authors = this.authorsService.getAuthors();
+    this.authorsService.getAll().subscribe({
+      next: () => {},
+    });
   }
 
   deleteAuthor(author: Author) {
