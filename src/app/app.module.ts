@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { LayoutComponent } from './core/components/layout/layout.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
-import { AuthGuard } from './core/guards/auth.guard';
+import { AuthGuard } from './features/auth/guards/auth.guard';
 import { AboutUsComponent } from './core/pages/about-us/about-us.component';
 import { ContactComponent } from './core/pages/contact/contact.component';
 import { FaqsComponent } from './core/pages/faqs/faqs.component';

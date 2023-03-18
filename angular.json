@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tftic-angular": {
+    "bookstore-web-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tftic-angular",
+            "outputPath": "dist/bookstore-web-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -74,13 +74,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "tftic-angular:build:production"
+              "browserTarget": "bookstore-web-app:build:production"
             },
             "development": {
-              "browserTarget": "tftic-angular:build:development"
+              "browserTarget": "bookstore-web-app:build:development"
             },
             "staging": {
-              "browserTarget": "tftic-angular:build:staging"
+              "browserTarget": "bookstore-web-app:build:staging"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "tftic-angular:build"
+            "browserTarget": "bookstore-web-app:build"
           }
         },
         "test": {

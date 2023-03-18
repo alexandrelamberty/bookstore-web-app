@@ -4,7 +4,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 import { LayoutComponent } from '../../core/components/layout/layout.component';
-import { AuthGuard } from '../../core/guards/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { SettingsComponent } from '../../core/pages/settings/settings.component';
 
 const routes: Routes = [
