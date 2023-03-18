@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthorsComponent } from './authors.component';
+import { AuthorsGridComponent } from './authors-grid.component';
 
-describe('AuthorsComponent', () => {
-  let component: AuthorsComponent;
-  let fixture: ComponentFixture<AuthorsComponent>;
+describe('AuthorsViewComponent', () => {
+  let component: AuthorsGridComponent;
+  let fixture: ComponentFixture<AuthorsGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthorsComponent],
+      declarations: [AuthorsGridComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AuthorsComponent);
+    fixture = TestBed.createComponent(AuthorsGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

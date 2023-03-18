@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
@@ -6,16 +6,25 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'tftic-angular';
-
-  constructor(private route: ActivatedRoute, private router: Router) {
-    console.log('AppComponent::Constructor', router);
+export class AppComponent implements OnInit {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router // private swUpdate: SwUpdate
+  ) {
+    console.log('AppComponent::Constructor');
   }
 
-  goTo() {
-    console.log('goto');
-    // ["/books", {id:bookId}]
-    this.router.navigate(['/books']);
+  ngOnInit() {
+    // if (this.swUpdate.isEnabled) {
+    //   this.swUpdate.available.subscribe(() => {
+    //     if (
+    //       confirm(
+    //         "You're using an old version of the control panel. Want to update?"
+    //       )
+    //     ) {
+    //       window.location.reload();
+    //     }
+    //   });
+    // }
   }
 }

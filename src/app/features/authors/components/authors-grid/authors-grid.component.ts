@@ -4,11 +4,11 @@ import { AuthorsService } from '../../services/authors.service';
 import { AuthorsResponse } from '../../models/author-responses.model';
 
 @Component({
-  selector: 'app-authors-view',
-  templateUrl: './authors-view.component.html',
-  styleUrls: ['./authors-view.component.css'],
+  selector: 'app-authors-grid',
+  templateUrl: './authors-grid.component.html',
+  styleUrls: ['./authors-grid.component.css'],
 })
-export class AuthorsViewComponent {
+export class AuthorsGridComponent {
   @Output() selectAuthorEvent: EventEmitter<{ authorId: string }>;
 
   authors: Author[] = [];
@@ -19,7 +19,7 @@ export class AuthorsViewComponent {
   }
 
   ngOnInit(): void {
-    console.log(AuthorsViewComponent.name);
+    console.log(AuthorsGridComponent.name);
     this.service.getAll().subscribe({
       next: (res: AuthorsResponse) => {
         this.authors = res.results;

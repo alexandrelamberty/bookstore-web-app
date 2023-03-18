@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-authors',
-  templateUrl: './authors.component.html',
-  styleUrls: ['./authors.component.css'],
+  selector: 'app-authors-view',
+  templateUrl: './authors-view.component.html',
+  styleUrls: ['./authors-view.component.css'],
 })
-export class AuthorsComponent {
-  // Property passed to author-details
-  selectedAuthor: any = '';
-
+export class AuthorsViewComponent {
   constructor(private router: Router) {}
 
+  // Event from the author-view component
   onSelectedItem(event: { authorId: string }) {
-    console.log('Event', event);
+    console.log('onSelectedItem', event);
     this.router.navigate(['authors', event.authorId]);
   }
 }

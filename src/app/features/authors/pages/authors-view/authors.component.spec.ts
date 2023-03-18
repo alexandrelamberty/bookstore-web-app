@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthorsViewComponent } from './authors-view.component';
 
-describe('AuthorsViewComponent', () => {
+describe('AuthorsComponent', () => {
   let component: AuthorsViewComponent;
   let fixture: ComponentFixture<AuthorsViewComponent>;
 
