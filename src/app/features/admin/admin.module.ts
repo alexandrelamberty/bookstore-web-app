@@ -21,7 +21,7 @@ import { GenresAddComponent } from './pages/genres-add/genres-add.component';
 import { BooksModule } from '../books/books.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, BooksModule, AdminRoutingModule],
+  imports: [CommonModule, SharedModule, AdminRoutingModule],
   declarations: [
     DashboardComponent,
     LayoutComponent,
