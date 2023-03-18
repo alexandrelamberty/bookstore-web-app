@@ -15,15 +15,12 @@ export class GenresDetailsComponent {
   constructor(
     private router: ActivatedRoute,
     private genresService: GenresService
-  ) {
-    console.log(GenresDetailsComponent.name);
-  }
+  ) {}
 
   ngOnInit() {
-    console.log('OnInit');
     // Retrieve the genreId
     const genreId = this.router.snapshot.paramMap.get('id');
-    console.log(genreId);
+
     if (genreId != null)
       this.genresService.getById(genreId).subscribe({
         next: (res: GenreResponse) => {
@@ -33,7 +30,6 @@ export class GenresDetailsComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('GenreDetailsComponent::OnChange', changes);
     // changes.prop contains the old and the new value...
   }
 }

@@ -17,12 +17,10 @@ export class GenreListComponent implements OnInit {
   genres: Genre[] = [];
 
   constructor(private genresService: GenresService) {
-    console.log('GenreListComponent');
     this.selectGenreEvent = new EventEmitter<{ title: string }>();
   }
 
   ngOnInit(): void {
-    console.log(GenreListComponent.name);
     this.genresService.getAll().subscribe({
       next: (res: GenresResponse) => {
         this.genres = res.results;
@@ -30,12 +28,9 @@ export class GenreListComponent implements OnInit {
     });
   }
 
-  deleteGenre(genre: Genre) {
-    console.log('GenreListComponent::deleteGenre', genre);
-  }
+  deleteGenre(genre: Genre) {}
 
   selectGenre(genre: Genre) {
-    console.log('GenreListComponent::selectGenre', genre);
     // Emit data to the parent
     this.selectGenreEvent.emit({ title: genre.name });
   }

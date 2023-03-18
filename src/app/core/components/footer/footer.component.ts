@@ -18,7 +18,6 @@ export class FooterComponent {
     /*private newsletterService: NewsletterService, */
     private formBuilder: FormBuilder
   ) {
-    console.log('FooterComponent::constructor');
     this.newsletterForm = this.formBuilder.group({
       email: new FormControl('', [
         Validators.required,
@@ -29,12 +28,9 @@ export class FooterComponent {
     });
   }
 
-  ngOnInit(): void {
-    console.log('FooterComponent::OnInit');
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log('FooterComponent::onSubmit');
     // newsletter service call
   }
 }

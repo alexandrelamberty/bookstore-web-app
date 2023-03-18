@@ -22,7 +22,6 @@ export class GenreFormComponent implements OnInit {
     private service: GenresService,
     private formBuilder: FormBuilder
   ) {
-    console.log('GenreFormComponent::constructor');
     this.genreForm = this.formBuilder.group({
       name: new FormControl('', [
         Validators.required,
@@ -32,12 +31,9 @@ export class GenreFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log('GenreFormComponent::OnInit');
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log('GenreFormComponent::onSubmit');
     this.submitted = true;
     if (this.genreForm.invalid) return;
 
@@ -50,7 +46,6 @@ export class GenreFormComponent implements OnInit {
   }
 
   onReset() {
-    console.log('GenreFormComponent::onSubmit');
     this.submitted = false;
     this.genreForm.reset();
   }

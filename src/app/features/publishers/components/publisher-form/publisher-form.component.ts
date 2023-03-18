@@ -22,7 +22,6 @@ export class PublisherFormComponent implements OnInit {
     private service: PublishersService,
     private formBuilder: FormBuilder
   ) {
-    console.log('PublisherFormComponent::constructor');
     this.publisherForm = this.formBuilder.group({
       name: new FormControl('', [
         Validators.required,
@@ -32,12 +31,9 @@ export class PublisherFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log('PublisherFormComponent::OnInit');
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log('PublisherFormComponent::onSubmit');
     this.submitted = true;
     if (this.publisherForm.invalid) return;
 
@@ -50,7 +46,6 @@ export class PublisherFormComponent implements OnInit {
   }
 
   onReset() {
-    console.log('PublisherFormComponent::onSubmit');
     this.submitted = false;
     this.publisherForm.reset();
   }

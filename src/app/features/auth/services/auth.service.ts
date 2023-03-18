@@ -27,16 +27,13 @@ export class AuthService {
     this.authenticatedUser
   );
 
-  constructor(private http: HttpClient) {
-    console.log(AuthService.name);
-  }
+  constructor(private http: HttpClient) {}
 
   public register(user: any): Observable<AuthResult> {
     return this.http
       .post<AuthResult>(environment.apiURL + 'auth/login', user)
       .pipe(
         tap((auth: AuthResult) => {
-          console.log('AuthResult: ', auth);
           this.authenticatedUser = auth.result.user;
           this.$authenticatedUser.next(this.authenticatedUser);
           this._isConnected$.next(true);
@@ -49,7 +46,6 @@ export class AuthService {
       .post<AuthResult>(environment.apiURL + 'auth/login', user)
       .pipe(
         tap((auth: AuthResult) => {
-          console.log('AuthResult: ', auth);
           this.authenticatedUser = auth.result.user;
           this.$authenticatedUser.next(this.authenticatedUser);
           this._isConnected$.next(true);
@@ -58,16 +54,12 @@ export class AuthService {
   }
 
   public logout(): void {
-    console.log('logout');
     this._isConnected$.next(false);
   }
 
-  public recoverPassword(user: any): void {
-    console.log('recoverPassword ', user);
-  }
+  public recoverPassword(user: any): void {}
 
   emit() {
-    console.log('emit', this.isAuthenticated);
     this._isConnected$.next(true);
     // this.$isAuthenticated.next(this.isAuthenticated);
     // this.$authenticatedUser.next(this.authenticatedUser);

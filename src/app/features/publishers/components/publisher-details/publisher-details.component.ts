@@ -10,16 +10,11 @@ export class PublisherDetailsComponent implements OnInit {
   // Receive from parent [selectedPublisherTitle]="parentData"
   @Input() publisher: Publisher | undefined = undefined;
 
-  ngOnInit() {
-    console.log(PublisherDetailsComponent.name, 'OnInit');
-  }
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('PublisherDetailsComponent::OnChange', changes);
     // changes.prop contains the old and the new value...
   }
 
-  constructor() {
-    console.log(PublisherDetailsComponent.name);
-  }
+  constructor() {}
 }

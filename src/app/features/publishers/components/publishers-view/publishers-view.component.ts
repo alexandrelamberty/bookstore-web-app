@@ -14,12 +14,10 @@ export class PublishersViewComponent {
   publishers: Publisher[] = [];
 
   constructor(private service: PublishersService) {
-    console.log('PublisherListComponent');
     this.selectPublisherEvent = new EventEmitter<{ publisherId: string }>();
   }
 
   ngOnInit(): void {
-    console.log(PublishersViewComponent.name);
     this.service.getAll().subscribe({
       next: (res: PublishersResponse) => {
         this.publishers = res.results;
@@ -28,7 +26,6 @@ export class PublishersViewComponent {
   }
 
   selectPublisher(publisher: Publisher) {
-    console.log('PublishersViewComponent::selectPublisher', publisher);
     this.selectPublisherEvent.emit({ publisherId: publisher.id });
   }
 }

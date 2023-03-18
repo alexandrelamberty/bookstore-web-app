@@ -14,12 +14,10 @@ export class GenresViewComponent {
   genres: Genre[] = [];
 
   constructor(private service: GenresService) {
-    console.log('GenreListComponent');
     this.selectGenreEvent = new EventEmitter<{ genreId: string }>();
   }
 
   ngOnInit(): void {
-    console.log(GenresViewComponent.name);
     this.service.getAll().subscribe({
       next: (res: GenresResponse) => {
         this.genres = res.results;
@@ -28,7 +26,6 @@ export class GenresViewComponent {
   }
 
   selectGenre(genre: Genre) {
-    console.log('GenresViewComponent::selectGenre', genre);
     // Emit data to the parent
     this.selectGenreEvent.emit({ genreId: genre.id });
   }

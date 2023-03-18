@@ -17,18 +17,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.isConnected$.subscribe((connectionState: boolean) => {
-      console.log('isConnected : ', connectionState);
       this.isConnected = connectionState;
       this.user = this.authService.authenticatedUser;
     });
 
     //
     // this.authService.$isAuthenticated.subscribe((isAuthenticated) => {
-    //   console.log('NavBarComponent ', isAuthenticated);
+    //
     //   this.isConnected = isAuthenticated;
     // });
     this.authService.$authenticatedUser.subscribe((authenticatedUser) => {
-      console.log('user', authenticatedUser);
       this.user = authenticatedUser;
     });
   }

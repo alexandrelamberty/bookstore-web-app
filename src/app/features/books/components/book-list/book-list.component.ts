@@ -17,12 +17,10 @@ export class BookListComponent implements OnInit {
   books: Book[] = [];
 
   constructor(private booksService: BooksService) {
-    console.log('BookListComponent');
     this.selectBookEvent = new EventEmitter<{ title: string }>();
   }
 
   ngOnInit(): void {
-    console.log(BookListComponent.name);
     this.booksService.getAll().subscribe({
       next: (res: BooksResponse) => {
         this.books = res.results;
@@ -31,7 +29,6 @@ export class BookListComponent implements OnInit {
   }
 
   deleteBook(book: Book) {
-    console.log('BookListComponent::deleteBook', book);
     this.books.forEach((el, index, object) => {
       if (el.title === book.title) {
         object.splice(index, 1);
@@ -40,7 +37,6 @@ export class BookListComponent implements OnInit {
   }
 
   selectBook(book: Book) {
-    console.log('BookListComponent::selectBook', book);
     // Emit data to the parent
     this.selectBookEvent.emit({ title: book.title });
   }

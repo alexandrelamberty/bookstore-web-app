@@ -15,15 +15,12 @@ export class PublishersDetailsComponent {
   constructor(
     private router: ActivatedRoute,
     private publishersService: PublishersService
-  ) {
-    console.log(PublishersDetailsComponent.name);
-  }
+  ) {}
 
   ngOnInit() {
-    console.log('OnInit');
     // Retrieve the publisherId
     const publisherId = this.router.snapshot.paramMap.get('id');
-    console.log(publisherId);
+
     if (publisherId != null)
       this.publishersService.getById(publisherId).subscribe({
         next: (res: PublisherResponse) => {
@@ -33,7 +30,6 @@ export class PublishersDetailsComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('PublisherDetailsComponent::OnChange', changes);
     // changes.prop contains the old and the new value...
   }
 }

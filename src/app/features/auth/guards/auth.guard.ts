@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   constructor(private authService: AuthService, private router: Router) {
     this.authService.$isAuthenticated.subscribe((isAuthenticated) => {
-      console.log('AuthGuard ', isAuthenticated);
       this.isConnected = isAuthenticated;
     });
   }

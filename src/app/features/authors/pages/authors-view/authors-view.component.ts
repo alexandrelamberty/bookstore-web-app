@@ -9,9 +9,7 @@ import { Route, Router } from '@angular/router';
 export class AuthorsViewComponent {
   constructor(private router: Router) {}
 
-  // Event from the author-view component
   onSelectedItem(event: { authorId: string }) {
-    console.log('onSelectedItem', event);
     this.router.navigate(['authors', event.authorId]);
   }
 }

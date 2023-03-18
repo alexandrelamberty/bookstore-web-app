@@ -10,7 +10,6 @@ export class GenresComponent {
   constructor(private router: Router) {}
 
   onSelectedItem(event: { genreId: string }) {
-    console.log('Event', event);
     this.router.navigate(['genres', event.genreId]);
   }
 }

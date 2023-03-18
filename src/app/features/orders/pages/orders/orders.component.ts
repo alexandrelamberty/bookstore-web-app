@@ -9,12 +9,9 @@ export class OrdersComponent {
   // Property passed to order-details
   selectedBook: any = '';
 
-  onBookAdded(eventData: { title: string }) {
-    console.log(eventData);
-  }
+  onBookAdded(eventData: { title: string }) {}
 
   onSelectedItem(eventData: { title: string }) {
-    console.log('Event', eventData);
     this.selectedBook = eventData;
   }
 }

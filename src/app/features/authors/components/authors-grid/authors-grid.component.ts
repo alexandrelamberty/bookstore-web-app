@@ -14,12 +14,10 @@ export class AuthorsGridComponent {
   authors: Author[] = [];
 
   constructor(private service: AuthorsService) {
-    console.log('AuthorListComponent');
     this.selectAuthorEvent = new EventEmitter<{ authorId: string }>();
   }
 
   ngOnInit(): void {
-    console.log(AuthorsGridComponent.name);
     this.service.getAll().subscribe({
       next: (res: AuthorsResponse) => {
         this.authors = res.results;
@@ -28,7 +26,6 @@ export class AuthorsGridComponent {
   }
 
   selectAuthor(author: Author) {
-    console.log('AuthorsViewComponent::selectAuthor', author);
     // Emit data to the parent
     this.selectAuthorEvent.emit({ authorId: author.id });
   }

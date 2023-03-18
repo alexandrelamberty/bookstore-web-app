@@ -24,7 +24,6 @@ export class RecoverPasswordFormComponent {
   ngOnInit() {}
 
   onSubmit(): void {
-    console.log('onSubmit ', this.recoverForm.value);
     const user = this.recoverForm.value;
     this.authService.recoverPassword(user);
     this.recoverForm.reset();

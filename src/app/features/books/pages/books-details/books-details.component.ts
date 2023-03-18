@@ -15,14 +15,11 @@ export class BooksDetailsComponent {
   constructor(
     private router: ActivatedRoute,
     private booksService: BooksService
-  ) {
-    console.log(BooksDetailsComponent.name);
-  }
+  ) {}
 
   ngOnInit() {
-    console.log('OnInit');
     const bookId = this.router.snapshot.paramMap.get('id');
-    console.log(bookId);
+
     if (bookId != null)
       this.booksService.getById(bookId).subscribe({
         next: (res: BookResponse) => {
@@ -32,7 +29,6 @@ export class BooksDetailsComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('BookDetailsComponent::OnChange', changes);
     // changes.prop contains the old and the new value...
   }
 }

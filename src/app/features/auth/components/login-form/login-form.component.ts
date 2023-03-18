@@ -41,21 +41,16 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(): void {
-    console.log('onSubmit ', this.loginForm.value);
     const user = this.loginForm.value;
     this.authService.login(user).subscribe({
       next: (res: AuthResult) => {
-        console.log('Login::Result');
         // FIXME: move to service
         localStorage.setItem('token', res.result.token);
         localStorage.setItem('userId', res.result.user.id.toString());
         localStorage.setItem('userRole', res.result.user.role);
       },
-      error: (err) => {
-        console.log(err);
-      },
+      error: (err) => {},
       complete: () => {
-        console.log('Login::Complete');
         this.loginForm.reset();
         this.router.navigate(['/']);
       },

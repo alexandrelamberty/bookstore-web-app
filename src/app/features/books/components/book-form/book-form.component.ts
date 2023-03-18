@@ -22,7 +22,6 @@ export class BookFormComponent implements OnInit {
     private booksService: BooksService,
     private formBuilder: FormBuilder
   ) {
-    console.log('BookFormComponent::constructor');
     this.bookForm = this.formBuilder.group({
       title: new FormControl('', [
         Validators.required,
@@ -37,12 +36,9 @@ export class BookFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log('BookFormComponent::OnInit');
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log('BookFormComponent::onSubmit');
     this.submitted = true;
     if (this.bookForm.invalid) return;
     const book: CreateBookDTO = {
@@ -54,7 +50,6 @@ export class BookFormComponent implements OnInit {
   }
 
   onReset() {
-    console.log('BookFormComponent::onSubmit');
     this.submitted = false;
     this.bookForm.reset();
   }

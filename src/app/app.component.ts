@@ -10,9 +10,7 @@ export class AppComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router // private swUpdate: SwUpdate
-  ) {
-    console.log('AppComponent::Constructor');
-  }
+  ) {}
 
   ngOnInit() {
     // if (this.swUpdate.isEnabled) {

@@ -12,7 +12,6 @@ export class BooksComponent {
   }
 
   onSelectedItem(event: { bookId: string }) {
-    console.log('Event', event);
     this.router.navigate(['books', event.bookId]);
   }
 }

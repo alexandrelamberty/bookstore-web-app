@@ -42,7 +42,6 @@ export class RegisterFormComponent {
   ngOnInit() {}
 
   onSubmit(): void {
-    console.log('onSubmit ', this.registerForm.value);
     const user = this.registerForm.value;
     this.authService.register(user);
     this.registerForm.reset();

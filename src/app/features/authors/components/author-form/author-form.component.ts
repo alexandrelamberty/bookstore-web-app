@@ -21,7 +21,6 @@ export class AuthorFormComponent implements OnInit {
     private service: AuthorsService,
     private formBuilder: FormBuilder
   ) {
-    console.log('AuthorFormComponent::constructor');
     this.authorForm = this.formBuilder.group({
       firsName: new FormControl('', [
         Validators.required,
@@ -36,13 +35,9 @@ export class AuthorFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log('AuthorFormComponent::OnInit');
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
-    console.log('AuthorFormComponent::onSubmit');
-
     this.submitted = true;
     if (this.authorForm.invalid) return;
 
@@ -60,7 +55,6 @@ export class AuthorFormComponent implements OnInit {
   }
 
   onReset() {
-    console.log('AuthorFormComponent::onSubmit');
     this.submitted = false;
     this.authorForm.reset();
   }

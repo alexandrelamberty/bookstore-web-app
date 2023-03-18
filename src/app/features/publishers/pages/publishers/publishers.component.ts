@@ -10,7 +10,6 @@ export class PublishersComponent {
   constructor(private router: Router) {}
 
   onSelectedItem(event: { publisherId: string }) {
-    console.log('Event', event);
     this.router.navigate(['publishers', event.publisherId]);
   }
 }
