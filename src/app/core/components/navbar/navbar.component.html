@@ -59,15 +59,6 @@
             >Genres</a
           >
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/orders"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >My Orders</a
-          >
-        </li>
         <li *ngIf="user?.role === 'Admin'" class="nav-item">
           <a
             class="nav-link"
@@ -90,19 +81,38 @@
 
       <button
         type="button"
-        class="btn btn-outline-primary me-2"
+        class="btn btn-outline-primary btn-sm me-2"
         routerLink="/auth/login"
         *ngIf="!isConnected"
       >
         Login
       </button>
+
       <button
         type="button"
-        class="btn btn-primary me-2"
+        class="btn btn-primary btn-sm me-2"
         routerLink="/auth/register"
         *ngIf="!isConnected"
       >
         Sign-up
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-sm me-2"
+        routerLink="/shopping-cart"
+        *ngIf="isConnected"
+      >
+        Cart
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-sm me-2"
+        routerLink="/orders"
+        *ngIf="isConnected"
+      >
+        Orders
       </button>
 
       <div class="d-flex flex-column flex-md-row flex-lg-column">
@@ -116,8 +126,10 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ user?.email }}
-                <img class="avatar" alt="" src="assets/avatar.png" />
+                <span>
+                  Welcome,
+                  {{ user?.firstName }}
+                </span>
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li>

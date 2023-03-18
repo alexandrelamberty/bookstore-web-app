@@ -20,7 +20,6 @@ import { GenresDetailsComponent } from './pages/genres-details/genres-details.co
     GenresRoutingModule,
   ],
   providers: [GenresService],
-  exports: [GenresComponent],
   declarations: [
     GenresComponent,
     GenresDetailsComponent,
@@ -29,5 +28,6 @@ import { GenresDetailsComponent } from './pages/genres-details/genres-details.co
     GenreDetailsComponent,
     GenresViewComponent,
   ],
+  exports: [GenresComponent],
 })
 export class GenresModule {}

@@ -20,7 +20,6 @@ import { BooksDetailsComponent } from './pages/books-details/books-details.compo
     BooksRoutingModule,
   ],
   providers: [BooksService],
-  exports: [BooksComponent],
   declarations: [
     BooksComponent,
     BookFormComponent,
@@ -29,5 +28,6 @@ import { BooksDetailsComponent } from './pages/books-details/books-details.compo
     BooksViewComponent,
     BooksDetailsComponent,
   ],
+  exports: [BooksComponent, BookFormComponent],
 })
 export class BooksModule {}
