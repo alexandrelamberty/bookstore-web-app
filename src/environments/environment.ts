@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  baseUrl: 'http://localhost:3000/',
-  apiURL: 'http://localhost:3000/',
+  production: true,
+  baseUrl: 'http://143.42.53.35:3000',
+  apiURL: 'https://epidemic-escapes.netlify.app',
 };
 
 /*
