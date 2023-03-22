@@ -1,4 +1,4 @@
-FROM node:latest as build
+FROM node:18.10.0 as build
 
 # Set the working directory
 WORKDIR /usr/local/app
