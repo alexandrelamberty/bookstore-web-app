@@ -19,9 +19,20 @@ import { AuthorsAddComponent } from './pages/authors-add/authors-add.component';
 import { PublishersAddComponent } from './pages/publishers-add/publishers-add.component';
 import { GenresAddComponent } from './pages/genres-add/genres-add.component';
 import { BooksModule } from '../books/books.module';
+import { AuthorsModule } from '../authors/authors.module';
+import { PublishersModule } from '../publishers/publishers.module';
+import { GenresModule } from '../genres/genres.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, AdminRoutingModule, BooksModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    AdminRoutingModule,
+    BooksModule,
+    AuthorsModule,
+    PublishersModule,
+    GenresModule,
+  ],
   declarations: [
     DashboardComponent,
     LayoutComponent,

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  baseUrl: 'https://epidemic-escapes.netlify.app/',
-  apiURL: 'http://143.42.53.35:3000/',
+  baseUrl: 'http://localhost/',
+  apiURL: 'http://localhost:3000/',
 };
 
 /*

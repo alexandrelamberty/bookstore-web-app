@@ -20,7 +20,6 @@ import { PublishersDetailsComponent } from './pages/publishers-details/publisher
     PublishersRoutingModule,
   ],
   providers: [PublishersService],
-  exports: [PublishersComponent],
   declarations: [
     PublishersComponent,
     PublishersDetailsComponent,
@@ -29,5 +28,6 @@ import { PublishersDetailsComponent } from './pages/publishers-details/publisher
     PublisherDetailsComponent,
     PublishersViewComponent,
   ],
+  exports: [PublisherFormComponent, PublisherDetailsComponent],
 })
 export class PublishersModule {}

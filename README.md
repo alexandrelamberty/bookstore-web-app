@@ -1,38 +1,54 @@
-# FSWD Web Application
-
-This application started as a playground to learn angular in my classes and now as become a full-stack project.
-
-You can read more about the main project [FSWD](https://github.com/alexandrelamberty/fswd) where I explain the how I architected and organized the different parts of the solution.
-
-You can access the web application at <https://fswd.netlify.app/>
-
-## Architecture
-
-This application is hosted on GitHub as you can see and linked to [Netlify](https://www.netlify.com/). In Netlify I choose to deploy the application from all branches
+# Bookstore Web Application
 
 ## Usage
 
+This web application is part of a Docker stack. See the [Epidemic-Escapes]() project to launch the complete stack.
+
 ## Development
 
-### Development server
+This application os
+
+## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### Code scaffolding
+## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Build
+## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### Running unit tests
+## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Docker
+
+Build the image
+
+```shell
+docker build -t alexandrelamberty/bookstore-web-app:tag .
+```
+
+Run the image with the default network.
+
+```shell
+docker run -p 80:80 --network=bookstore_default --name bookstore-web-app -d alexandrelamberty/bookstore-web-app:tag
+```
+
+Push image to [alexandrelamberty/bookstore-api](https://hub.docker.com/repository/docker/alexandrelamberty/bookstore-api/general) on DockerHub
+
+```shell
+docker push alexandrelamberty/bookstore-web-app:tag
+```
+
+Image repository
 
 ## Further help
 

@@ -10,4 +10,11 @@ export interface Book {
   publisher: Publisher;
   authors: Author[];
   cover: string;
+  ISBN10: string;
+  ISBN13: string;
+  retailPrice: number;
+  retailPriceCurrency: string;
+  averageRating: number;
+  ratingsCount: number;
+  language: string;
 }

@@ -1,4 +1,4 @@
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
   <div
     class="col"
     *ngFor="let author of authors"
@@ -8,12 +8,6 @@
       <div class="card-body">
         <h5 class="card-title">{{ author.firstName }}</h5>
         <p class="card-text">{{ author.lastName }}</p>
-        <a href="{{ author.firstName }}" target="_blank" class="card-link"
-          >Amazon Link</a
-        >
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
   </div>
