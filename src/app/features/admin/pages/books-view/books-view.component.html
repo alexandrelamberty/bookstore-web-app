@@ -1,4 +1,8 @@
-<p>Books</p>
+<div class="d-flex flex-row mx-2">
+  <p>Books</p>
+  <app-button title="Add Book" [routerLink]="['./add']"></app-button>
+  <app-pagination></app-pagination>
+</div>
 <app-table
   *ngIf="books"
   [columns]="['title', 'description', 'genre[name]', 'publisher.name']"

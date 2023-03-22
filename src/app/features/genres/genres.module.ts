@@ -28,6 +28,6 @@ import { GenresDetailsComponent } from './pages/genres-details/genres-details.co
     GenreDetailsComponent,
     GenresViewComponent,
   ],
-  exports: [GenresComponent],
+  exports: [GenreFormComponent, GenreDetailsComponent],
 })
 export class GenresModule {}

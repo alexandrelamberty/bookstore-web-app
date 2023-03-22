@@ -54,6 +54,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         // FIXME: move to service
         localStorage.setItem('token', res.result.token);
         localStorage.setItem('userId', res.result.user.id.toString());
+        localStorage.setItem('userFirstName', res.result.user.firstName);
         localStorage.setItem('userRole', res.result.user.role);
       },
       error: (error) => {

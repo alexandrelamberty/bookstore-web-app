@@ -23,7 +23,7 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
     component: LayoutComponent,
     children: [
-      { path: '', component: DashboardComponent },
+      { path: '', redirectTo: 'books', pathMatch: 'full' },
       { path: 'books', component: BooksViewComponent },
       { path: 'books/add', component: BooksAddComponent },
       { path: 'books/:id/edit', component: BooksEditComponent },

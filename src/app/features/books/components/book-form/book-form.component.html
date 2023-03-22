@@ -4,7 +4,7 @@
     <input type="text" class="form-control" formControlName="title" />
   </div>
   <div class="mb-3">
-    <label for="author" class="form-label">Author</label>
+    <label for="author" class="form-label">Description</label>
     <textarea
       type="text"
       class="form-control"
@@ -12,15 +12,23 @@
     ></textarea>
   </div>
   <div class="mb-3">
-    <label for="amazon" class="form-label">Amazon</label>
+    <label for="amazon" class="form-label">Genre</label>
     <input type="text" class="form-control" formControlName="amazon" />
   </div>
   <div class="mb-3">
-    <label for="category" class="form-label">Category</label>
+    <label for="category" class="form-label">Publisher</label>
     <input type="text" class="form-control" formControlName="category" />
   </div>
   <div class="mb-3">
-    <label for="tags" class="form-label">Tags</label>
+    <label for="tags" class="form-label">Authors</label>
+    <input type="text" class="form-control" formControlName="tags" />
+  </div>
+  <div class="mb-3">
+    <label for="tags" class="form-label">Retail Price</label>
+    <input type="text" class="form-control" formControlName="tags" />
+  </div>
+  <div class="mb-3">
+    <label for="tags" class="form-label">Retail Price Currency</label>
     <input type="text" class="form-control" formControlName="tags" />
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">
