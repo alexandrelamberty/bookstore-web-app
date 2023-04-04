@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost/',
-  apiURL: 'http://localhost:3000/',
+  baseUrl: 'https://bookstore.eevos.be/',
+  apiURL: 'https://bookstore-api.eevos.be/',
 };
 
 /*
