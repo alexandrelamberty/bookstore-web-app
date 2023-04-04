@@ -2,11 +2,11 @@
 
 ## Usage
 
-This web application is part of a Docker stack. See the [Epidemic-Escapes]() project to launch the complete stack.
+This web application is part of a Docker stack. See the [Bookstore](https://github.com/alexandrelamberty/bookstore) project to launch the complete stack.
 
 ## Development
 
-This application os
+...
 
 ## Development server
 
