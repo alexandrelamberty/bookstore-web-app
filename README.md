@@ -33,7 +33,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 Build the image
 
 ```shell
-docker build -t alexandrelamberty/bookstore-web-app:tag .
+docker build . -t alexandrelamberty/bookstore-web-app:tag 
 ```
 
 Run the image with the default network.
