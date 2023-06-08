@@ -2,11 +2,11 @@
 
 ## Usage
 
-This web application is part of a Docker stack. See the [Epidemic-Escapes]() project to launch the complete stack.
+This web application is part of a Docker stack. See the [Bookstore](https://github.com/alexandrelamberty/bookstore) project to launch the complete stack.
 
 ## Development
 
-This application os
+...
 
 ## Development server
 
@@ -33,7 +33,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 Build the image
 
 ```shell
-docker build -t alexandrelamberty/bookstore-web-app:tag .
+docker build . -t alexandrelamberty/bookstore-web-app:tag 
 ```
 
 Run the image with the default network.
