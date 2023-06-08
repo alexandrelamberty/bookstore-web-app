@@ -17,8 +17,10 @@ RUN npm run build
 # Use official nginx image as the base image
 FROM nginx:latest
 
+# Copy the nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/bookstore-web-app /usr/share/nginx/html
-
 # Expose port 80
 EXPOSE 80
